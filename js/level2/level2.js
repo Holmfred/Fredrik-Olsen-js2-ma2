@@ -1,7 +1,5 @@
 const listKey = "list"
-
 let bookList = retriveFromStorage();
-
 createList();
 
 const button = document.querySelector("button")
@@ -20,11 +18,8 @@ function addToList() {
         bookList.push(newBook)
         createList()
         saveToStorage(bookList)
-
         console.log(bookList)
-    }
-
-    
+    } 
 }
 
 function createList() {
