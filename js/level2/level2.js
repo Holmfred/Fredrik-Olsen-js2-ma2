@@ -11,7 +11,6 @@ button.addEventListener("click", addToList);
 function addToList() {
     const newTitle = titleInput.value;
     const newISBN = isbnInput.value.trim();
-    const newBook = "Title:" + newTitle + " " + "ISBN:" + newISBN;
 
     if(newTitle.length >= 2 && newISBN.length >= 3) {
         const newBook = "Title:" + newTitle + " " + "ISBN:" + newISBN;
@@ -52,6 +51,7 @@ function removeFromList() {
         if (deleteThisBook !== book){
             return true;
         }
+
     });
 
     bookList = newList;
@@ -67,7 +67,7 @@ function retriveFromStorage() {
     const currentList = localStorage.getItem(listKey)
 
     if(!currentList) {
-        return []
+        return [];
     }
 
     return JSON.parse(currentList);
